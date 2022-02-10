@@ -1,5 +1,5 @@
 // For problems 1-2 use the following lines of code:
-var arr = [10,20,30,40,50,60]
+var arr = [10, 20, 30, 40, 50, 60]
 
 ////////// PROBLEM 1 //////////
 /*
@@ -8,13 +8,17 @@ var arr = [10,20,30,40,50,60]
 
 //Code Here
 
-
+let firstItem = arr[0];
+console.log(firstItem);
 ////////// PROBLEM 2 //////////
 /*
   Remove the last item from the 'arr' array and store it in a variable named 'lastItemRemoved'. Console.log the array to verify you no longer have the last item.
 */
 
 //Code Here
+let lasItemRemoved = arr.pop();
+console.log(`lastItemRemoved: ${lasItemRemoved}`)
+console.log(`arr: ${arr}`)
 
 ////////// PROBLEM 3 //////////
 
@@ -28,12 +32,15 @@ var family = ['Tyler', 'Jordan', 'Ryan', 'Alice', 'Ireland'];
 
 //Code Here
 
+for (let i = 0; i < family.length; i++) {
+  console.log(family[i]);
+}
 
 
 ////////// PROBLEM 4 //////////
 
 // Do not edit the code below.
-var nums = [1,2,3,6,22,98,45,23,22,12];
+var nums = [1, 2, 3, 6, 22, 98, 45, 23, 22, 12];
 let evensArr = []
 // Do not edit the code above.
 
@@ -42,8 +49,12 @@ let evensArr = []
 */
 
 //Code Here
-
-
+for (let i = 0; i < nums.length; i++) {
+  if (nums[i] % 2 === 0) {
+    evensArr.push(nums[i]);
+  }
+}
+console.log(evensArr)
 
 ////////// PROBLEM 5 //////////
 
@@ -56,14 +67,28 @@ var score = 74
 */
 
 //Code Here
-
+if (score >= 90) {
+  console.log("Grade: A")
+}
+else if (score >= 80 && score <= 89) {
+  console.log("Grade: B");
+}
+else if (score >= 70 && score <= 79) {
+  console.log("Grade: C");
+}
+else if (score >= 60 && score <= 69) {
+  console.log("Grade: D");
+}
+else {
+  console.log("Grade: F");
+}
 
 ////////// Intermediate Problems //////////
 
 ////////// PROBLEM 6 //////////
 
 // Do not edit the code below.
-var myFavoriteNumbers = [4,8,12,16,20,24];
+var myFavoriteNumbers = [4, 8, 12, 16, 20, 24, 28, 32];
 // Do not edit the code above.
 
 /*
@@ -71,7 +96,8 @@ var myFavoriteNumbers = [4,8,12,16,20,24];
 */
 
 //Code Here
-
+let someNum = myFavoriteNumbers[4];
+console.log(someNum);
 
 ////////// PROBLEM 7 //////////
 
@@ -79,17 +105,28 @@ var myFavoriteNumbers = [4,8,12,16,20,24];
 // Use an if statement to check the length of the 'myFavoriteNumbers' array. If it's less than 7, log 'There are not enough elements in this array' to the console. If the length is more than 7, reassign the value of 'someNum' to the value of the 7th element in the array. (Hint: how can you make sure that your code works for exactly 7 elements? What index do you use to get the 7th element?)
 
 //Code Here
-
+if (myFavoriteNumbers.length < 7) {
+  console.log("There are not enough elements in this array.");
+}
+else if (myFavoriteNumbers.length >= 7) {
+  someNum = myFavoriteNumbers[6];
+}
 
 ////////// PROBLEM 8 //////////
 
 // Do not edit the code below.
-var listOfNumbers = [1,2,3,4,5,6,7,8,9,10,11,12];
+var listOfNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 // Do not edit the code above.
 
 // Use a for-loop to iterate through 'listOfNumbers', checking to see if each number is divisible by 3. If it is, console.log '{number} is divisible by 3.'
 
 //Code Here
+
+for (let i = 0; i < listOfNumbers.length; i++) {
+  if (listOfNumbers[i] % 3 === 0) {
+    console.log(`${listOfNumbers[i]} is divisible by 3.`)
+  }
+}
 
 
 ////////// PROBLEM 9 //////////
@@ -102,6 +139,10 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 */
 
 //Code Here
+let lengthOfLetters = letters.length - 1;
+for (let i = lengthOfLetters; i >= 0; i--) {
+  console.log(letters[i])
+}
 
 
 ////////// Advanced Problems //////////
@@ -110,7 +151,7 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 // Switch statements can be excellent alternatives to if blocks. Look up switch statements (I recommend W3 Schools) and try to implement one for the following.
 
 // Do not edit the code below.
-let letterGrade = 'B'
+let letterGrade = 'A'
 // Do not edit the code above.
 
 /* Use a switch statement on 'letterGrade' and console.log the appropriate response.
@@ -124,7 +165,26 @@ If the letter grade is not one of the above letters, console.log 'Not an eligibl
 */
 
 //Code Here
-
+switch (letterGrade) {
+  case 'A':
+    console.log("The student is doing excellently");
+    break;
+  case 'B':
+    console.log("The student is doing well.");
+    break;
+  case 'C':
+    console.log("The student is doing alright.");
+    break;
+  case 'D':
+    console.log("The student is not doing very well.");
+    break;
+  case 'F':
+    console.log("The student is failing.");
+    break;
+  default:
+    console.log("Not an eligible grade.");
+    break;
+}
 
 
 ////////// PROBLEM 11 //////////
@@ -152,3 +212,20 @@ If the letter grade is not one of the above letters, console.log 'Not an eligibl
 */
 
 //Code Here
+for (let i = 1; i <= 100; i++) {
+  // If the number is divisible by 5 & 3, console.log 'Devmountain'
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log("Devmountain");
+  }
+  //if the number your for loop is currently on is divisible by 3, console.log 'Dev'
+  else if (i % 3 === 0) {
+    console.log("Dev");
+  }
+  //If the number is divisible by 5, console.log 'mountain'
+  else if (i % 5 === 0) {
+    console.log("mountain");
+  }
+  else {
+    console.log(i);
+  }
+}
